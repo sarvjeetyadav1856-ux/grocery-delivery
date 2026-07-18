@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Product</title>
+</head>
+<body>
+<h1 align="center">
+Edit Product
+</h1>
+<center>
+<a href="/">Home</a>
+<a href="/products">
+
+View Products
+</a>
+
+</center>
+
+<br>
+
+<form
+
+action="/update/<%= product._id %>?_method=PUT"
+
+method="POST">
+
+<table align="center" cellpadding="10">
+
+<tr>
+
+<td>Product Name</td>
+
+<td>
+
+<input
+
+type="text"
+
+name="name"
+
+value="<%= product.name %>"
+
+required>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Price</td>
+
+<td>
+
+<input
+
+type="number"
+
+name="price"
+
+value="<%= product.price %>"
+
+required>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Category</td>
+
+<td>
+
+<input
+
+type="text"
+
+name="category"
+
+value="<%= product.category %>"
+
+required>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Image URL</td>
+
+<td>
+
+<input
+
+type="text"
+
+name="image"
+
+value="<%= product.image %>"
+
+required>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Description</td>
+
+<td>
+
+<textarea
+
+name="description"
+
+rows="5"
+
+cols="30"
+
+required><%= product.description %></textarea>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2" align="center">
+
+<button type="submit">
+
+Update Product
+
+</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</body>
+
+</html>

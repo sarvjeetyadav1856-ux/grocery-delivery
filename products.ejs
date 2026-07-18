@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Products</title>
+
+</head>
+<body>
+<h1 align="center">All Products</h1>
+<center>
+<a href="/">Home</a>
+
+<a href="/add">Add Product</a>
+
+</center>
+<br>
+
+<table border="1" align="center" cellpadding="10">
+<tr>
+   <th>Name</th>
+    <th>Price</th>
+     <th>Category</th>
+
+      <th>Image</th>
+       <th>Description</th>
+       <th>Action</th>
+
+</tr>
+
+<% products.forEach(product=>{ %>
+<tr>
+
+    <td><%= product.name %></td>
+    <td>₹<%= product.price %></td>
+      <td><%= product.category %></td>
+<td>
+
+    <img src="<%= product.image %>" width="80">
+</td>
+<td>
+<%= product.description %>
+</td>
+<td>
+<a href="/edit/<%= product._id %>">
+
+Edit
+
+</a>
+
+|
+
+<form
+
+action="/delete/<%= product._id %>?_method=DELETE"
+
+method="POST"
+
+style="display:inline;">
+
+<button type="submit">
+
+Delete
+
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</body>
+
+</html>

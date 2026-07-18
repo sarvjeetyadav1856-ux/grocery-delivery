@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart Grocery Store</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+    <h1 align="center">FreshMart Grocery Store</h1>
+
+    <hr>
+
+    <center>
+
+        <a href="/products">View Products</a>
+
+        |
+
+        <a href="/add">Add Product</a>
+
+    </center>
+
+    <br>
+
+    <h2 align="center">Latest Products</h2>
+
+    <table border="1" align="center" cellpadding="10">
+
+        <tr>
+
+            <th>Name</th>
+
+            <th>Price</th>
+
+            <th>Category</th>
+
+        </tr>
+
+        <% products.forEach(product => { %>
+
+        <tr>
+
+            <td><%= product.name %></td>
+
+            <td>₹<%= product.price %></td>
+
+            <td><%= product.category %></td>
+
+        </tr>
+
+        <% }) %>
+
+    </table>
+
+</body>
+
+</html>
